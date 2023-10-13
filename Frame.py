@@ -146,8 +146,6 @@ class Frame:
         flags = []
         if flag_bits[7] == '1':
             flags.append("ACK")
-        if flag_bits[8] == '1':
-            flags.append("PUSH")
         if flag_bits[9] == '1':
             flags.append("RST")
         if flag_bits[10] == '1':

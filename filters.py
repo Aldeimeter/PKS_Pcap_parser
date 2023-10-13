@@ -9,77 +9,34 @@ def tcp_filter(frame_list, protocol):
         if ip_pair not in ip_pairs_list and ip_pair[::-1] not in ip_pairs_list:
             ip_pairs_list.append(ip_pair)
     print(ip_pairs_list)
+    ip_pair_frames = {}
+    for frame in tcp_frame_list:
+        ip_pair = (str(frame.get_src_ip()) + ":" + str(frame.get_src_port()), str(frame.get_dst_ip()) + ":"
+                   + str(frame.get_dst_port()))
+        if ip_pair in ip_pairs_list:
+            if ip_pair_frames.get(ip_pair) is None:
+                ip_pair_frames[ip_pair] = []
+            ip_pair_frames[ip_pair] = ip_pair_frames[ip_pair] + [frame]
+        elif ip_pair[::-1] in ip_pairs_list:
+            if ip_pair_frames.get(ip_pair[::-1]) is None:
+                ip_pair_frames[ip_pair[::-1]] = []
+            ip_pair_frames[ip_pair[::-1]] = ip_pair_frames[ip_pair[::-1]] + [frame]
     k = 1
-    for i in range(len(ip_pairs_list)):
-        frames = []
-        for frame in tcp_frame_list:
-            ip_pair = (str(frame.get_src_ip()) + ":" + str(frame.get_src_port()), str(frame.get_dst_ip()) + ":"
-                       + str(frame.get_dst_port()))
-            if ip_pair == ip_pairs_list[i] or ip_pair[::-1] == ip_pairs_list[i]:
-                frames.append(frame)
-        complete_com = []
-        partial_com = []
-        for j in range(len(frames)):
-            if j + 2 < len(frames) and "SYN" in frames[j].get_flags() and "SYN" in frames[j + 1].get_flags() \
-                    and "ACK" in frames[j + 1].get_flags() and "ACK" in frames[j + 2].get_flags():
-                complete_com.append(frames[j])
-                complete_com.append(frames[j + 1])
-                complete_com.append(frames[j + 2])
-            elif j + 3 < len(frames) and "SYN" in frames[j].get_flags() and "ACK" in frames[j + 1].get_flags() \
-                    and "SYN" in frames[j + 2].get_flags() and "ACK" in frames[j + 3].get_flags():
-                complete_com.append(frames[j])
-                complete_com.append(frames[j + 1])
-                complete_com.append(frames[j + 2])
-                complete_com.append(frames[j + 3])
-            if j + 3 < len(frames) and "FIN" in frames[j].get_flags() and "ACK" in frames[j + 1].get_flags() \
-                    and "FIN" in frames[j + 2].get_flags() and "ACK" in frames[j + 3].get_flags():
-                if complete_com:
-                    complete_com.append(frames[j])
-                    complete_com.append(frames[j + 1])
-                    complete_com.append(frames[j + 2])
-                    complete_com.append(frames[j + 3])
-                    complete_coms_dict[f"{k:d}_0"] = complete_com
-                    k += 1
-                    complete_com = []
-                elif not partial_com:
-                    partial_com.append(frames[j])
-                    partial_com.append(frames[j + 1])
-                    partial_com.append(frames[j + 2])
-                    partial_com.append(frames[j + 3])
-                    complete_coms_dict[f"{k:d}_1"] = partial_com
-                    k += 1
-            elif j + 1 < len(frames) and "FIN" in frames[j].get_flags() and "FIN" in frames[j + 1].get_flags() \
-                    and "ACK" in frames[j].get_flags() and "ACK" in frames[j + 1].get_flags():
-                if complete_com:
-                    complete_com.append(frames[j])
-                    complete_com.append(frames[j])
-                    complete_coms_dict[f"{k:d}_0"] = complete_com
-                    k += 1
-                    complete_com = []
-                elif not partial_com:
-                    partial_com.append(frames[j])
-                    partial_com.append(frames[j + 1])
-                    complete_coms_dict[f"{k:d}_1"] = partial_com
-                    k += 1
-            elif j + 2 < len(frames) and "FIN" in frames[j].get_flags() and \
-                    ("RST" in frames[j + 1].get_flags() or "RST" in frames[j + 2].get_flags()):
-                if complete_com:
-                    complete_com.append(frames[j])
-                    complete_com.append(frames[j + 1])
-                    complete_com.append(frames[j + 2])
-                    complete_coms_dict[f"{k:d}_0"] = complete_com
-                    k += 1
-                    complete_com = []
-                elif not partial_com:
-                    partial_com.append(frames[j])
-                    partial_com.append(frames[j + 1])
-                    partial_com.append(frames[j + 2])
-                    complete_coms_dict[f"{k:d}_1"] = partial_com
-                    k += 1
-            elif complete_com and not partial_com:
-                complete_coms_dict[f"{k:d}_1"] = complete_com
-                complete_com = []
-                k += 1
+    for frames in ip_pair_frames.values():
+        if ("SYN" in frames[0].get_flags() and "ACK" in frames[1].get_flags()) \
+            and (("SYN" in frames[1].get_flags() and "ACK" in frames[2].get_flags())
+                 or ("SYN" in frames[3].get_flags() and "ACK" in frames[4].get_flags())):
+            if ("FIN" in frames[-4].get_flags() and "ACK" in frames[-1].get_flags())\
+                    and (("FIN" in frames[-3].get_flags() and "ACK" in frames[-2].get_flags())
+                         or ("ACK" in frames[-3].get_flags() and "FIN" in frames[-2].get_flags())):
+                complete_coms_dict[f'{k:d}_0'] = frames
+            elif "RST" in frames[-1].get_flags():
+                complete_coms_dict[f'{k:d}_0'] = frames
+            else:
+                complete_coms_dict[f'{k:d}_1'] = frames
+        else:
+            complete_coms_dict[f'{k:d}_1'] = frames
+        k += 1
     return complete_coms_dict
 
 
