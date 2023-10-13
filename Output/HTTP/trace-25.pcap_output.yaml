@@ -1,0 +1,60 @@
+name: PKS2023/24
+pcap_name: trace-25.pcap
+filter_name: HTTP
+partial_comms:
+- number_comm: 1
+  packets:
+  - frame_number: 77
+    len_frame_pcap: 62
+    len_frame_medium: 66
+    frame_type: Ethernet II
+    src_mac: 00:00:C0:D7:80:C2
+    dst_mac: 00:04:76:A4:E4:8C
+    ether_type: IPv4
+    src_ip: 147.175.98.238
+    dst_ip: 147.175.99.42
+    protocol: TCP
+    src_port: 1114
+    dst_port: 80
+    app_protocol: HTTP
+    hexa_frame: |
+      00 04 76 A4 E4 8C 00 00 C0 D7 80 C2 08 00 45 00
+      00 30 0A 0A 40 00 80 06 03 47 93 AF 62 EE 93 AF
+      63 2A 04 5A 00 50 79 44 45 AB 00 00 00 00 70 02
+      40 00 92 0E 00 00 02 04 05 B4 01 01 04 02
+  - frame_number: 78
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:04:76:A4:E4:8C
+    dst_mac: 00:00:C0:D7:80:C2
+    ether_type: IPv4
+    src_ip: 147.175.99.42
+    dst_ip: 147.175.98.238
+    protocol: TCP
+    src_port: 80
+    dst_port: 1114
+    app_protocol: HTTP
+    hexa_frame: |
+      00 00 C0 D7 80 C2 00 04 76 A4 E4 8C 08 00 45 00
+      00 2C 0D 2B 00 00 3F 06 81 2A 93 AF 63 2A 93 AF
+      62 EE 00 50 04 5A 4E 6B FC 8E 79 44 45 AC 60 12
+      40 00 5C 0A 00 00 02 04 05 B4 00 00
+  - frame_number: 79
+    len_frame_pcap: 54
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:00:C0:D7:80:C2
+    dst_mac: 00:04:76:A4:E4:8C
+    ether_type: IPv4
+    src_ip: 147.175.98.238
+    dst_ip: 147.175.99.42
+    protocol: TCP
+    src_port: 1114
+    dst_port: 80
+    app_protocol: HTTP
+    hexa_frame: |
+      00 04 76 A4 E4 8C 00 00 C0 D7 80 C2 08 00 45 00
+      00 28 0A 0C 40 00 80 06 03 4D 93 AF 62 EE 93 AF
+      63 2A 04 5A 00 50 79 44 45 AC 4E 6B FC 8F 50 10
+      44 70 6F 57 00 00

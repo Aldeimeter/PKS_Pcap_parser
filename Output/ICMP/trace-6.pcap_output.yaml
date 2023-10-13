@@ -1,0 +1,148 @@
+name: PKS2023/24
+pcap_name: trace-6.pcap
+filter_name: ICMP
+complete_comms:
+- number_comm: 1
+  src_comm: 192.168.1.33
+  dst_comm: 72.163.4.161
+  packets:
+  - frame_number: 1
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 72.163.4.161
+    protocol: ICMP
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 3C 15 77 00 00 80 01 16 3D C0 A8 01 21 48 A3
+      04 A1 08 00 3A 5C 02 00 11 00 61 62 63 64 65 66
+      67 68 69 6A 6B 6C 6D 6E 6F 70 71 72 73 74 75 76
+      77 61 62 63 64 65 66 67 68 69
+  - frame_number: 2
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 72.163.4.161
+    dst_ip: 192.168.1.33
+    protocol: ICMP
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 3C 2F 3B 00 00 70 01 0C 79 48 A3 04 A1 C0 A8
+      01 21 00 00 42 5C 02 00 11 00 61 62 63 64 65 66
+      67 68 69 6A 6B 6C 6D 6E 6F 70 71 72 73 74 75 76
+      77 61 62 63 64 65 66 67 68 69
+- number_comm: 2
+  src_comm: 192.168.1.33
+  dst_comm: 72.163.4.161
+  packets:
+  - frame_number: 3
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 72.163.4.161
+    protocol: ICMP
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 3C 15 78 00 00 80 01 16 3C C0 A8 01 21 48 A3
+      04 A1 08 00 39 5C 02 00 12 00 61 62 63 64 65 66
+      67 68 69 6A 6B 6C 6D 6E 6F 70 71 72 73 74 75 76
+      77 61 62 63 64 65 66 67 68 69
+  - frame_number: 4
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 72.163.4.161
+    dst_ip: 192.168.1.33
+    protocol: ICMP
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 3C 2F 86 00 00 70 01 0C 2E 48 A3 04 A1 C0 A8
+      01 21 00 00 41 5C 02 00 12 00 61 62 63 64 65 66
+      67 68 69 6A 6B 6C 6D 6E 6F 70 71 72 73 74 75 76
+      77 61 62 63 64 65 66 67 68 69
+- number_comm: 3
+  src_comm: 192.168.1.33
+  dst_comm: 72.163.4.161
+  packets:
+  - frame_number: 5
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 72.163.4.161
+    protocol: ICMP
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 3C 15 79 00 00 80 01 16 3B C0 A8 01 21 48 A3
+      04 A1 08 00 38 5C 02 00 13 00 61 62 63 64 65 66
+      67 68 69 6A 6B 6C 6D 6E 6F 70 71 72 73 74 75 76
+      77 61 62 63 64 65 66 67 68 69
+  - frame_number: 6
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 72.163.4.161
+    dst_ip: 192.168.1.33
+    protocol: ICMP
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 3C 2F EC 00 00 70 01 0B C8 48 A3 04 A1 C0 A8
+      01 21 00 00 40 5C 02 00 13 00 61 62 63 64 65 66
+      67 68 69 6A 6B 6C 6D 6E 6F 70 71 72 73 74 75 76
+      77 61 62 63 64 65 66 67 68 69
+- number_comm: 4
+  src_comm: 192.168.1.33
+  dst_comm: 72.163.4.161
+  packets:
+  - frame_number: 7
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 72.163.4.161
+    protocol: ICMP
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 3C 15 7A 00 00 80 01 16 3A C0 A8 01 21 48 A3
+      04 A1 08 00 37 5C 02 00 14 00 61 62 63 64 65 66
+      67 68 69 6A 6B 6C 6D 6E 6F 70 71 72 73 74 75 76
+      77 61 62 63 64 65 66 67 68 69
+  - frame_number: 8
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 72.163.4.161
+    dst_ip: 192.168.1.33
+    protocol: ICMP
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 3C 30 36 00 00 70 01 0B 7E 48 A3 04 A1 C0 A8
+      01 21 00 00 3F 5C 02 00 14 00 61 62 63 64 65 66
+      67 68 69 6A 6B 6C 6D 6E 6F 70 71 72 73 74 75 76
+      77 61 62 63 64 65 66 67 68 69

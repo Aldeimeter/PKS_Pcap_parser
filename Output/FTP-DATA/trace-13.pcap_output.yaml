@@ -1,0 +1,682 @@
+name: PKS2023/24
+pcap_name: trace-13.pcap
+filter_name: FTP-DATA
+complete_comms:
+- number_comm: 5
+  src_comm: 193.0.6.140
+  dst_comm: 192.168.1.33
+  packets:
+  - frame_number: 21
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 3C 43 61 40 00 31 06 7D 05 C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1E 3D 00 00 00 00 A0 02
+      16 D0 5D B0 00 00 02 04 05 64 04 02 08 0A B3 56
+      5D 5C 00 00 00 00 01 03 03 07
+  - frame_number: 22
+    len_frame_pcap: 78
+    len_frame_medium: 82
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 40 14 E9 40 00 80 06 5C 79 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B5 07 ED 1E 3E B0 12
+      FF FF A0 53 00 00 02 04 05 B4 01 03 03 00 01 01
+      08 0A 00 00 00 00 00 00 00 00 01 01 04 02
+  - frame_number: 24
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 43 62 40 00 31 06 7D 0C C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1E 3E 53 CA 7E B6 80 10
+      00 2E D0 16 00 00 01 01 08 0A B3 56 5D 83 00 00
+      00 00
+  - frame_number: 26
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 43 64 40 00 31 06 7D 0A C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1F 28 53 CA 7E B6 80 11
+      00 2E CF 2A 00 00 01 01 08 0A B3 56 5D 84 00 00
+      00 00
+  - frame_number: 27
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 34 14 EB 40 00 80 06 5C 83 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B6 07 ED 1F 29 80 10
+      FF 15 AF BA 00 00 01 01 08 0A 00 01 20 87 B3 56
+      5D 84
+  - frame_number: 28
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 34 14 EC 40 00 80 06 5C 82 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B6 07 ED 1F 29 80 11
+      FF 15 AF B9 00 00 01 01 08 0A 00 01 20 87 B3 56
+      5D 84
+  - frame_number: 29
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 00 00 40 00 31 06 C0 6E C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1F 29 53 CA 7E B7 80 10
+      00 2E AE 50 00 00 01 01 08 0A B3 56 5D D5 00 01
+      20 87
+partial_comms:
+- number_comm: 1
+  packets:
+  - frame_number: 21
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 3C 43 61 40 00 31 06 7D 05 C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1E 3D 00 00 00 00 A0 02
+      16 D0 5D B0 00 00 02 04 05 64 04 02 08 0A B3 56
+      5D 5C 00 00 00 00 01 03 03 07
+  - frame_number: 22
+    len_frame_pcap: 78
+    len_frame_medium: 82
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 40 14 E9 40 00 80 06 5C 79 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B5 07 ED 1E 3E B0 12
+      FF FF A0 53 00 00 02 04 05 B4 01 03 03 00 01 01
+      08 0A 00 00 00 00 00 00 00 00 01 01 04 02
+  - frame_number: 24
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 43 62 40 00 31 06 7D 0C C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1E 3E 53 CA 7E B6 80 10
+      00 2E D0 16 00 00 01 01 08 0A B3 56 5D 83 00 00
+      00 00
+  - frame_number: 26
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 43 64 40 00 31 06 7D 0A C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1F 28 53 CA 7E B6 80 11
+      00 2E CF 2A 00 00 01 01 08 0A B3 56 5D 84 00 00
+      00 00
+  - frame_number: 27
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 34 14 EB 40 00 80 06 5C 83 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B6 07 ED 1F 29 80 10
+      FF 15 AF BA 00 00 01 01 08 0A 00 01 20 87 B3 56
+      5D 84
+  - frame_number: 28
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 34 14 EC 40 00 80 06 5C 82 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B6 07 ED 1F 29 80 11
+      FF 15 AF B9 00 00 01 01 08 0A 00 01 20 87 B3 56
+      5D 84
+  - frame_number: 29
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 00 00 40 00 31 06 C0 6E C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1F 29 53 CA 7E B7 80 10
+      00 2E AE 50 00 00 01 01 08 0A B3 56 5D D5 00 01
+      20 87
+- number_comm: 2
+  packets:
+  - frame_number: 21
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 3C 43 61 40 00 31 06 7D 05 C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1E 3D 00 00 00 00 A0 02
+      16 D0 5D B0 00 00 02 04 05 64 04 02 08 0A B3 56
+      5D 5C 00 00 00 00 01 03 03 07
+  - frame_number: 22
+    len_frame_pcap: 78
+    len_frame_medium: 82
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 40 14 E9 40 00 80 06 5C 79 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B5 07 ED 1E 3E B0 12
+      FF FF A0 53 00 00 02 04 05 B4 01 03 03 00 01 01
+      08 0A 00 00 00 00 00 00 00 00 01 01 04 02
+  - frame_number: 24
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 43 62 40 00 31 06 7D 0C C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1E 3E 53 CA 7E B6 80 10
+      00 2E D0 16 00 00 01 01 08 0A B3 56 5D 83 00 00
+      00 00
+  - frame_number: 26
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 43 64 40 00 31 06 7D 0A C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1F 28 53 CA 7E B6 80 11
+      00 2E CF 2A 00 00 01 01 08 0A B3 56 5D 84 00 00
+      00 00
+  - frame_number: 27
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 34 14 EB 40 00 80 06 5C 83 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B6 07 ED 1F 29 80 10
+      FF 15 AF BA 00 00 01 01 08 0A 00 01 20 87 B3 56
+      5D 84
+  - frame_number: 28
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 34 14 EC 40 00 80 06 5C 82 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B6 07 ED 1F 29 80 11
+      FF 15 AF B9 00 00 01 01 08 0A 00 01 20 87 B3 56
+      5D 84
+  - frame_number: 29
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 00 00 40 00 31 06 C0 6E C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1F 29 53 CA 7E B7 80 10
+      00 2E AE 50 00 00 01 01 08 0A B3 56 5D D5 00 01
+      20 87
+- number_comm: 3
+  packets:
+  - frame_number: 21
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 3C 43 61 40 00 31 06 7D 05 C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1E 3D 00 00 00 00 A0 02
+      16 D0 5D B0 00 00 02 04 05 64 04 02 08 0A B3 56
+      5D 5C 00 00 00 00 01 03 03 07
+  - frame_number: 22
+    len_frame_pcap: 78
+    len_frame_medium: 82
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 40 14 E9 40 00 80 06 5C 79 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B5 07 ED 1E 3E B0 12
+      FF FF A0 53 00 00 02 04 05 B4 01 03 03 00 01 01
+      08 0A 00 00 00 00 00 00 00 00 01 01 04 02
+  - frame_number: 24
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 43 62 40 00 31 06 7D 0C C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1E 3E 53 CA 7E B6 80 10
+      00 2E D0 16 00 00 01 01 08 0A B3 56 5D 83 00 00
+      00 00
+  - frame_number: 26
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 43 64 40 00 31 06 7D 0A C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1F 28 53 CA 7E B6 80 11
+      00 2E CF 2A 00 00 01 01 08 0A B3 56 5D 84 00 00
+      00 00
+  - frame_number: 27
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 34 14 EB 40 00 80 06 5C 83 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B6 07 ED 1F 29 80 10
+      FF 15 AF BA 00 00 01 01 08 0A 00 01 20 87 B3 56
+      5D 84
+  - frame_number: 28
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 34 14 EC 40 00 80 06 5C 82 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B6 07 ED 1F 29 80 11
+      FF 15 AF B9 00 00 01 01 08 0A 00 01 20 87 B3 56
+      5D 84
+  - frame_number: 29
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 00 00 40 00 31 06 C0 6E C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1F 29 53 CA 7E B7 80 10
+      00 2E AE 50 00 00 01 01 08 0A B3 56 5D D5 00 01
+      20 87
+- number_comm: 4
+  packets:
+  - frame_number: 21
+    len_frame_pcap: 74
+    len_frame_medium: 78
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 3C 43 61 40 00 31 06 7D 05 C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1E 3D 00 00 00 00 A0 02
+      16 D0 5D B0 00 00 02 04 05 64 04 02 08 0A B3 56
+      5D 5C 00 00 00 00 01 03 03 07
+  - frame_number: 22
+    len_frame_pcap: 78
+    len_frame_medium: 82
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 40 14 E9 40 00 80 06 5C 79 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B5 07 ED 1E 3E B0 12
+      FF FF A0 53 00 00 02 04 05 B4 01 03 03 00 01 01
+      08 0A 00 00 00 00 00 00 00 00 01 01 04 02
+  - frame_number: 24
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 43 62 40 00 31 06 7D 0C C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1E 3E 53 CA 7E B6 80 10
+      00 2E D0 16 00 00 01 01 08 0A B3 56 5D 83 00 00
+      00 00
+  - frame_number: 26
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 43 64 40 00 31 06 7D 0A C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1F 28 53 CA 7E B6 80 11
+      00 2E CF 2A 00 00 01 01 08 0A B3 56 5D 84 00 00
+      00 00
+  - frame_number: 27
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 34 14 EB 40 00 80 06 5C 83 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B6 07 ED 1F 29 80 10
+      FF 15 AF BA 00 00 01 01 08 0A 00 01 20 87 B3 56
+      5D 84
+  - frame_number: 28
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:14:38:06:E0:93
+    dst_mac: 00:02:CF:AB:A2:4C
+    ether_type: IPv4
+    src_ip: 192.168.1.33
+    dst_ip: 193.0.6.140
+    protocol: TCP
+    src_port: 5001
+    dst_port: 20
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 02 CF AB A2 4C 00 14 38 06 E0 93 08 00 45 00
+      00 34 14 EC 40 00 80 06 5C 82 C0 A8 01 21 C1 00
+      06 8C 13 89 00 14 53 CA 7E B6 07 ED 1F 29 80 11
+      FF 15 AF B9 00 00 01 01 08 0A 00 01 20 87 B3 56
+      5D 84
+  - frame_number: 29
+    len_frame_pcap: 66
+    len_frame_medium: 70
+    frame_type: Ethernet II
+    src_mac: 00:02:CF:AB:A2:4C
+    dst_mac: 00:14:38:06:E0:93
+    ether_type: IPv4
+    src_ip: 193.0.6.140
+    dst_ip: 192.168.1.33
+    protocol: TCP
+    src_port: 20
+    dst_port: 5001
+    app_protocol: FTP-DATA
+    hexa_frame: |
+      00 14 38 06 E0 93 00 02 CF AB A2 4C 08 00 45 00
+      00 34 00 00 40 00 31 06 C0 6E C1 00 06 8C C0 A8
+      01 21 00 14 13 89 07 ED 1F 29 53 CA 7E B7 80 10
+      00 2E AE 50 00 00 01 01 08 0A B3 56 5D D5 00 01
+      20 87

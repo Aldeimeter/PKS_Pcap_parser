@@ -1,0 +1,282 @@
+name: PKS2023/24
+pcap_name: trace-2.pcap
+filter_name: ARP
+complete_comms:
+- number_comm: 9
+  src_comm: 128.238.38.160
+  dst_comm: 128.238.38.1
+  packets:
+  - frame_number: 13
+    len_frame_pcap: 42
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:09:6B:10:60:99
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.160
+    dst_ip: 128.238.38.1
+    hexa_frame: |
+      FF FF FF FF FF FF 00 09 6B 10 60 99 08 06 00 01
+      08 00 06 04 00 01 00 09 6B 10 60 99 80 EE 26 A0
+      00 00 00 00 00 00 80 EE 26 01
+  - frame_number: 14
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:00:0C:07:AC:00
+    dst_mac: 00:09:6B:10:60:99
+    ether_type: ARP
+    src_ip: 128.238.38.1
+    dst_ip: 128.238.38.160
+    hexa_frame: |
+      00 09 6B 10 60 99 00 00 0C 07 AC 00 08 06 00 01
+      08 00 06 04 00 02 00 00 0C 07 AC 00 80 EE 26 01
+      00 09 6B 10 60 99 80 EE 26 A0 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+partial_comms:
+- number_comm: 1
+  packets:
+  - frame_number: 2
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.38
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 26 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+  - frame_number: 27
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.38
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 26 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 2
+  packets:
+  - frame_number: 3
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.26
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 1A 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 3
+  packets:
+  - frame_number: 5
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.74
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 4A 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+  - frame_number: 22
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.74
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 4A 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 4
+  packets:
+  - frame_number: 6
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.109
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 6D 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 5
+  packets:
+  - frame_number: 8
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.123
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 7B 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+  - frame_number: 26
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.123
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 7B 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 6
+  packets:
+  - frame_number: 9
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:10:5A:A3:0D:D4
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.199
+    dst_ip: 128.238.38.1
+    hexa_frame: |
+      FF FF FF FF FF FF 00 10 5A A3 0D D4 08 06 00 01
+      08 00 06 04 00 01 00 10 5A A3 0D D4 80 EE 26 C7
+      00 00 00 00 00 00 80 EE 26 01 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 7
+  packets:
+  - frame_number: 10
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.17
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 11 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+  - frame_number: 29
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.17
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 11 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 8
+  packets:
+  - frame_number: 12
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.66
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 42 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+  - frame_number: 33
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.66
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 42 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 10
+  packets:
+  - frame_number: 30
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.97
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 61 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 11
+  packets:
+  - frame_number: 31
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.52
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 34 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 12
+  packets:
+  - frame_number: 35
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:B0:8E:83:E4:54
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 128.238.38.2
+    dst_ip: 128.238.38.147
+    hexa_frame: |
+      FF FF FF FF FF FF 00 B0 8E 83 E4 54 08 06 00 01
+      08 00 06 04 00 01 00 B0 8E 83 E4 54 80 EE 26 02
+      00 00 00 00 00 00 80 EE 26 93 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
