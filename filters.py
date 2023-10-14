@@ -166,17 +166,30 @@ def arp_filter(frame_list):
                     req_dst_ip_frames[req_dst_ip] = []
                 req_dst_ip_frames[req_dst_ip] = req_dst_ip_frames[req_dst_ip] + [frame]
     k = 1
-    for frames in req_dst_ip_frames.values():
-        part_com = []
-        for frame in frames[::-1]:
+    part_com_requests = []
+    opcodes = [0 for _ in range(len(req_dst_ip_frames))]
+    for i, frames in enumerate(req_dst_ip_frames.values()):
+        for frame in frames:
             if frame.get_arp_opcode() == "Request":
-                part_com.append(frame)
-                frames.remove(frame)
+                opcodes[i] += 1
             elif frame.get_arp_opcode() == "Reply":
-                complete_coms_dict[f'{k:d}_0'] = frames
-                k += 1
-                break
-        if part_com:
-            complete_coms_dict[f'{k:d}_1'] = part_com[::-1]
+                opcodes[i] -= 1
+    for i, frames in enumerate(req_dst_ip_frames.values()):
+        if opcodes[i] < 0:
+            for frame in frames:
+                if frame.get_arp_opcode() == "Request":
+                    frames.remove(frame)
+            complete_coms_dict[f'{k:d}_1'] = frames
             k += 1
+        elif opcodes[i] >= 0:
+            for frame in frames[::-1]:
+                if frame.get_arp_opcode() == "Request":
+                    part_com_requests.append(frame)
+                    frames.remove(frame)
+                elif frame.get_arp_opcode() == "Reply":
+                    complete_coms_dict[f'{k:d}_0'] = frames
+                    k += 1
+                    break
+    if part_com_requests:
+        complete_coms_dict[f'{k:d}_1'] = part_com_requests
     return complete_coms_dict
