@@ -15,6 +15,7 @@ complete_comms:
     ether_type: ARP
     src_ip: 192.168.1.105
     dst_ip: 192.168.1.1
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 D0 59 A9 3D 68 08 06 00 01
       08 00 06 04 00 01 00 D0 59 A9 3D 68 C0 A8 01 69
@@ -28,6 +29,7 @@ complete_comms:
     ether_type: ARP
     src_ip: 192.168.1.1
     dst_ip: 192.168.1.105
+    arp_opcode: Reply
     hexa_frame: |
       00 D0 59 A9 3D 68 00 06 25 DA AF 73 08 06 00 01
       08 00 06 04 00 02 00 06 25 DA AF 73 C0 A8 01 01
@@ -45,6 +47,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 192.168.1.104
     dst_ip: 192.168.1.117
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 80 AD 73 8D CE 08 06 00 01
       08 00 06 04 00 01 00 80 AD 73 8D CE C0 A8 01 68

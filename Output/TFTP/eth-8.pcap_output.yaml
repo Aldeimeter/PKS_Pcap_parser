@@ -1,10 +1,8 @@
 name: PKS2023/24
 pcap_name: eth-8.pcap
 filter_name: TFTP
-complete_comms:
+partial_comms:
 - number_comm: 1
-  src_comm: 192.168.1.11
-  dst_comm: 192.168.1.18
   packets:
   - frame_number: 7
     len_frame_pcap: 63

@@ -95,7 +95,7 @@ def read_protocols():
     return [pids, saps], [ether_types, ipv4_protocols, tcp_protocols, udp_protocols]
 
 
-def communication_item(key, value):
+def communication_item(key, value, mode=None):
     nested_item = yaml.YAML()
     communication = nested_item.map()
     packet_seq = nested_item.seq()
@@ -103,7 +103,7 @@ def communication_item(key, value):
     communication['src_comm'] = value[0].get_src_ip()
     communication['dst_comm'] = value[0].get_dst_ip()
     for frame in value:
-        packet_seq.append(frame.get_item())
+        packet_seq.append(frame.get_item(mode))
     communication['packets'] = packet_seq
     return communication
 
@@ -115,7 +115,7 @@ def communication_block(comp_coms, mode):
     check = True
     for key in comp_coms.keys():
         if key[-1] == "0":
-            communication_seq.append(communication_item(key, comp_coms.get(key)))
+            communication_seq.append(communication_item(key, comp_coms.get(key), mode))
         elif key[-1] == "1":
             if mode not in ["ARP", "ICMP", "TFTP"] and check is True:
                 check = False

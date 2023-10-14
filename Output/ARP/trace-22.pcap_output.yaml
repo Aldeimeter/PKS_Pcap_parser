@@ -13,11 +13,42 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.223
     dst_ip: 147.175.98.40
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 75 7F B8 8A 08 06 00 01
       08 00 06 04 00 01 00 04 75 7F B8 8A 93 AF 62 DF
       00 00 00 00 00 00 93 AF 62 28 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
+  - frame_number: 32
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 52:54:AB:14:55:F4
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 147.175.98.4
+    dst_ip: 147.175.98.40
+    arp_opcode: Request
+    hexa_frame: |
+      FF FF FF FF FF FF 52 54 AB 14 55 F4 08 06 00 01
+      08 00 06 04 00 01 52 54 AB 14 55 F4 93 AF 62 04
+      00 00 00 00 00 00 93 AF 62 28 20 20 20 20 20 20
+      20 20 20 20 20 20 20 20 20 20 20 00
+  - frame_number: 59
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:60:97:15:B1:5F
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 147.175.98.31
+    dst_ip: 147.175.98.40
+    arp_opcode: Request
+    hexa_frame: |
+      FF FF FF FF FF FF 00 60 97 15 B1 5F 08 06 00 01
+      08 00 06 04 00 01 00 60 97 15 B1 5F 93 AF 62 1F
+      00 00 00 00 00 00 93 AF 62 28 28 28 28 28 28 28
+      28 28 28 28 28 28 28 28 28 28 28 28
 - number_comm: 2
   packets:
   - frame_number: 20
@@ -29,28 +60,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.194
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 C2 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
 - number_comm: 3
-  packets:
-  - frame_number: 32
-    len_frame_pcap: 60
-    len_frame_medium: 64
-    frame_type: Ethernet II
-    src_mac: 52:54:AB:14:55:F4
-    dst_mac: FF:FF:FF:FF:FF:FF
-    ether_type: ARP
-    src_ip: 147.175.98.4
-    dst_ip: 147.175.98.40
-    hexa_frame: |
-      FF FF FF FF FF FF 52 54 AB 14 55 F4 08 06 00 01
-      08 00 06 04 00 01 52 54 AB 14 55 F4 93 AF 62 04
-      00 00 00 00 00 00 93 AF 62 28 20 20 20 20 20 20
-      20 20 20 20 20 20 20 20 20 20 20 00
-- number_comm: 4
   packets:
   - frame_number: 41
     len_frame_pcap: 60
@@ -61,12 +77,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.225
     dst_ip: 147.175.98.1
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E2 43 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E2 43 93 AF 62 E1
       00 00 00 00 00 00 93 AF 62 01 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 5
+- number_comm: 4
   packets:
   - frame_number: 45
     len_frame_pcap: 60
@@ -77,12 +94,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.19
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 13 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 6
+- number_comm: 5
   packets:
   - frame_number: 47
     len_frame_pcap: 60
@@ -93,24 +111,9 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.27
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 1B 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 7
-  packets:
-  - frame_number: 59
-    len_frame_pcap: 60
-    len_frame_medium: 64
-    frame_type: Ethernet II
-    src_mac: 00:60:97:15:B1:5F
-    dst_mac: FF:FF:FF:FF:FF:FF
-    ether_type: ARP
-    src_ip: 147.175.98.31
-    dst_ip: 147.175.98.40
-    hexa_frame: |
-      FF FF FF FF FF FF 00 60 97 15 B1 5F 08 06 00 01
-      08 00 06 04 00 01 00 60 97 15 B1 5F 93 AF 62 1F
-      00 00 00 00 00 00 93 AF 62 28 28 28 28 28 28 28
-      28 28 28 28 28 28 28 28 28 28 28 28

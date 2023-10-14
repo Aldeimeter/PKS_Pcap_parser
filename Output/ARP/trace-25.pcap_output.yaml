@@ -13,6 +13,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.74
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -27,6 +28,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.74
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -43,6 +45,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.132
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -57,6 +60,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.132
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -73,6 +77,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.113
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -89,6 +94,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.192
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -105,6 +111,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.200
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -119,6 +126,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.200
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -135,9 +143,85 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.40
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
+      00 00 00 00 00 00 93 AF 62 28 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+  - frame_number: 70
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:04:75:C6:B8:1F
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 147.175.98.224
+    dst_ip: 147.175.98.40
+    arp_opcode: Request
+    hexa_frame: |
+      FF FF FF FF FF FF 00 04 75 C6 B8 1F 08 06 00 01
+      08 00 06 04 00 01 00 04 75 C6 B8 1F 93 AF 62 E0
+      00 00 00 00 00 00 93 AF 62 28 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+  - frame_number: 109
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:04:76:A4:E5:52
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 147.175.98.210
+    dst_ip: 147.175.98.40
+    arp_opcode: Request
+    hexa_frame: |
+      FF FF FF FF FF FF 00 04 76 A4 E5 52 08 06 00 01
+      08 00 06 04 00 01 00 04 76 A4 E5 52 93 AF 62 D2
+      00 00 00 00 00 00 93 AF 62 28 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+  - frame_number: 118
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:04:75:7F:B4:CB
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 147.175.98.216
+    dst_ip: 147.175.98.40
+    arp_opcode: Request
+    hexa_frame: |
+      FF FF FF FF FF FF 00 04 75 7F B4 CB 08 06 00 01
+      08 00 06 04 00 01 00 04 75 7F B4 CB 93 AF 62 D8
+      00 00 00 00 00 00 93 AF 62 28 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00
+  - frame_number: 120
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:00:C0:64:D5:C2
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 147.175.98.167
+    dst_ip: 147.175.98.40
+    arp_opcode: Request
+    hexa_frame: |
+      FF FF FF FF FF FF 00 00 C0 64 D5 C2 08 06 00 01
+      08 00 06 04 00 01 00 00 C0 64 D5 C2 93 AF 62 A7
+      00 00 00 00 00 00 93 AF 62 28 64 D5 C2 40 08 00
+      01 00 04 51 00 00 93 AF 62 A7 00 00
+  - frame_number: 369
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 00:07:E9:4A:B5:25
+    dst_mac: FF:FF:FF:FF:FF:FF
+    ether_type: ARP
+    src_ip: 147.175.98.185
+    dst_ip: 147.175.98.40
+    arp_opcode: Request
+    hexa_frame: |
+      FF FF FF FF FF FF 00 07 E9 4A B5 25 08 06 00 01
+      08 00 06 04 00 01 00 07 E9 4A B5 25 93 AF 62 B9
       00 00 00 00 00 00 93 AF 62 28 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
 - number_comm: 7
@@ -151,6 +235,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.3
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -165,6 +250,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.3
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -179,6 +265,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.3
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -195,6 +282,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.120
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -211,6 +299,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.153
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -227,6 +316,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.78
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -241,6 +331,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.78
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -255,6 +346,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.78
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -271,6 +363,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.5
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -285,6 +378,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.5
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -299,6 +393,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.5
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -313,28 +408,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.5
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 05 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
 - number_comm: 12
-  packets:
-  - frame_number: 70
-    len_frame_pcap: 60
-    len_frame_medium: 64
-    frame_type: Ethernet II
-    src_mac: 00:04:75:C6:B8:1F
-    dst_mac: FF:FF:FF:FF:FF:FF
-    ether_type: ARP
-    src_ip: 147.175.98.224
-    dst_ip: 147.175.98.40
-    hexa_frame: |
-      FF FF FF FF FF FF 00 04 75 C6 B8 1F 08 06 00 01
-      08 00 06 04 00 01 00 04 75 C6 B8 1F 93 AF 62 E0
-      00 00 00 00 00 00 93 AF 62 28 00 00 00 00 00 00
-      00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 13
   packets:
   - frame_number: 71
     len_frame_pcap: 60
@@ -345,12 +425,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.110
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 6E 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 14
+- number_comm: 13
   packets:
   - frame_number: 72
     len_frame_pcap: 60
@@ -361,12 +442,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.142
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 8E 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 15
+- number_comm: 14
   packets:
   - frame_number: 75
     len_frame_pcap: 60
@@ -377,12 +459,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.25
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 19 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 16
+- number_comm: 15
   packets:
   - frame_number: 76
     len_frame_pcap: 60
@@ -393,6 +476,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.146
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -407,6 +491,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.146
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -421,6 +506,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.146
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -435,6 +521,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.146
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -449,6 +536,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.146
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -463,12 +551,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.146
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
       00 00 00 00 00 00 93 AF 62 92 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 17
+- number_comm: 16
   packets:
   - frame_number: 82
     len_frame_pcap: 60
@@ -479,6 +568,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.48
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -493,6 +583,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.48
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -507,6 +598,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.48
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -521,6 +613,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.48
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -535,6 +628,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.48
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -549,28 +643,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.48
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
       00 00 00 00 00 00 93 AF 62 30 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 18
-  packets:
-  - frame_number: 109
-    len_frame_pcap: 60
-    len_frame_medium: 64
-    frame_type: Ethernet II
-    src_mac: 00:04:76:A4:E5:52
-    dst_mac: FF:FF:FF:FF:FF:FF
-    ether_type: ARP
-    src_ip: 147.175.98.210
-    dst_ip: 147.175.98.40
-    hexa_frame: |
-      FF FF FF FF FF FF 00 04 76 A4 E5 52 08 06 00 01
-      08 00 06 04 00 01 00 04 76 A4 E5 52 93 AF 62 D2
-      00 00 00 00 00 00 93 AF 62 28 00 00 00 00 00 00
-      00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 19
+- number_comm: 17
   packets:
   - frame_number: 110
     len_frame_pcap: 60
@@ -581,6 +660,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.45
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -595,6 +675,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.45
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -609,6 +690,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.45
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -623,6 +705,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.45
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -637,6 +720,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.45
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
@@ -651,12 +735,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.30
     dst_ip: 147.175.98.45
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 E0 29 05 51 2B 08 06 00 01
       08 00 06 04 00 01 00 E0 29 05 51 2B 93 AF 62 1E
       00 00 00 00 00 00 93 AF 62 2D 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 20
+- number_comm: 18
   packets:
   - frame_number: 112
     len_frame_pcap: 60
@@ -667,6 +752,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.76
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -681,6 +767,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.76
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -695,6 +782,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.76
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -709,6 +797,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.76
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -723,44 +812,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.76
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 4C 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 21
-  packets:
-  - frame_number: 118
-    len_frame_pcap: 60
-    len_frame_medium: 64
-    frame_type: Ethernet II
-    src_mac: 00:04:75:7F:B4:CB
-    dst_mac: FF:FF:FF:FF:FF:FF
-    ether_type: ARP
-    src_ip: 147.175.98.216
-    dst_ip: 147.175.98.40
-    hexa_frame: |
-      FF FF FF FF FF FF 00 04 75 7F B4 CB 08 06 00 01
-      08 00 06 04 00 01 00 04 75 7F B4 CB 93 AF 62 D8
-      00 00 00 00 00 00 93 AF 62 28 00 00 00 00 00 00
-      00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 22
-  packets:
-  - frame_number: 120
-    len_frame_pcap: 60
-    len_frame_medium: 64
-    frame_type: Ethernet II
-    src_mac: 00:00:C0:64:D5:C2
-    dst_mac: FF:FF:FF:FF:FF:FF
-    ether_type: ARP
-    src_ip: 147.175.98.167
-    dst_ip: 147.175.98.40
-    hexa_frame: |
-      FF FF FF FF FF FF 00 00 C0 64 D5 C2 08 06 00 01
-      08 00 06 04 00 01 00 00 C0 64 D5 C2 93 AF 62 A7
-      00 00 00 00 00 00 93 AF 62 28 64 D5 C2 40 08 00
-      01 00 04 51 00 00 93 AF 62 A7 00 00
-- number_comm: 23
+- number_comm: 19
   packets:
   - frame_number: 121
     len_frame_pcap: 60
@@ -771,12 +829,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.72
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 48 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 24
+- number_comm: 20
   packets:
   - frame_number: 195
     len_frame_pcap: 60
@@ -787,12 +846,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.213
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 D5 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 25
+- number_comm: 21
   packets:
   - frame_number: 196
     len_frame_pcap: 60
@@ -803,6 +863,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.92
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -817,6 +878,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.92
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
@@ -831,12 +893,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.92
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 5C 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 26
+- number_comm: 22
   packets:
   - frame_number: 198
     len_frame_pcap: 60
@@ -847,12 +910,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.54
     dst_ip: 147.175.98.6
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 52 54 AB 17 27 79 08 06 00 01
       08 00 06 04 00 01 52 54 AB 17 27 79 93 AF 62 36
       00 00 00 00 00 00 93 AF 62 06 20 20 20 20 20 20
       20 20 20 20 20 20 20 20 20 20 20 20
-- number_comm: 27
+- number_comm: 23
   packets:
   - frame_number: 208
     len_frame_pcap: 60
@@ -863,12 +927,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.205
     dst_ip: 147.175.98.1
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 52 54 AB 14 8B 15 08 06 00 01
       08 00 06 04 00 01 52 54 AB 14 8B 15 93 AF 62 CD
       00 00 00 00 00 00 93 AF 62 01 20 20 20 20 20 20
       20 20 20 20 20 20 20 20 20 20 20 00
-- number_comm: 28
+- number_comm: 24
   packets:
   - frame_number: 209
     len_frame_pcap: 60
@@ -879,12 +944,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.205
     dst_ip: 147.175.98.232
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 52 54 AB 14 8B 15 08 06 00 01
       08 00 06 04 00 01 52 54 AB 14 8B 15 93 AF 62 CD
       00 00 00 00 00 00 93 AF 62 E8 20 20 20 20 20 20
       20 20 20 20 20 20 20 20 20 20 20 00
-- number_comm: 29
+- number_comm: 25
   packets:
   - frame_number: 219
     len_frame_pcap: 60
@@ -895,6 +961,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.40
     dst_ip: 147.175.98.220
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8B 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8B 93 AF 62 28
@@ -909,6 +976,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.40
     dst_ip: 147.175.98.220
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8B 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8B 93 AF 62 28
@@ -923,6 +991,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.40
     dst_ip: 147.175.98.220
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8B 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8B 93 AF 62 28
@@ -937,6 +1006,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.40
     dst_ip: 147.175.98.220
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8B 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8B 93 AF 62 28
@@ -951,6 +1021,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.40
     dst_ip: 147.175.98.220
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8B 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8B 93 AF 62 28
@@ -965,12 +1036,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.40
     dst_ip: 147.175.98.220
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8B 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8B 93 AF 62 28
       00 00 00 00 00 00 93 AF 62 DC 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 30
+- number_comm: 26
   packets:
   - frame_number: 295
     len_frame_pcap: 60
@@ -981,12 +1053,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.133
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 85 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 31
+- number_comm: 27
   packets:
   - frame_number: 299
     len_frame_pcap: 60
@@ -997,12 +1070,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.37
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 25 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 32
+- number_comm: 28
   packets:
   - frame_number: 301
     len_frame_pcap: 60
@@ -1013,28 +1087,13 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.70
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01
       00 00 00 00 00 00 93 AF 62 46 00 00 00 00 00 00
       00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 33
-  packets:
-  - frame_number: 369
-    len_frame_pcap: 60
-    len_frame_medium: 64
-    frame_type: Ethernet II
-    src_mac: 00:07:E9:4A:B5:25
-    dst_mac: FF:FF:FF:FF:FF:FF
-    ether_type: ARP
-    src_ip: 147.175.98.185
-    dst_ip: 147.175.98.40
-    hexa_frame: |
-      FF FF FF FF FF FF 00 07 E9 4A B5 25 08 06 00 01
-      08 00 06 04 00 01 00 07 E9 4A B5 25 93 AF 62 B9
-      00 00 00 00 00 00 93 AF 62 28 00 00 00 00 00 00
-      00 00 00 00 00 00 00 00 00 00 00 00
-- number_comm: 34
+- number_comm: 29
   packets:
   - frame_number: 371
     len_frame_pcap: 60
@@ -1045,6 +1104,7 @@ partial_comms:
     ether_type: ARP
     src_ip: 147.175.98.1
     dst_ip: 147.175.98.151
+    arp_opcode: Request
     hexa_frame: |
       FF FF FF FF FF FF 00 04 76 A4 E4 8C 08 06 00 01
       08 00 06 04 00 01 00 04 76 A4 E4 8C 93 AF 62 01

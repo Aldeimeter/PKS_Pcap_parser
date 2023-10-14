@@ -19,10 +19,30 @@ class Frame:
                 self._source_port, self._destination_port, self._app_protocol = self.ether_type_check(second_check)
             if self._app_protocol in ["HTTP", "FTP-CONTROL", "HTTPS", "TELNET", "SSH", "FTP-DATA"]:
                 self._flags = self.check_flags()
+            elif self._ipv4_protocol == "ICMP":
+                self._icmp_type, self._icmp_id, self._icmp_seq = self.check_icmp()
+            elif self._ether_type == "ARP":
+                self._arp_opcode = self.check_arp()
         self._hex_code = self.create_hex_code()
 
     def get_length(self):
         return self._length
+
+    def get_arp_opcode(self):
+        if self._frame_type == "Ethernet II" and self._ether_type == "ARP":
+            return self._arp_opcode
+
+    def get_icmp_type(self):
+        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4" and self._ipv4_protocol == "ICMP":
+            return self._icmp_type
+
+    def get_icmp_id(self):
+        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4" and self._ipv4_protocol == "ICMP":
+            return self._icmp_id
+
+    def get_icmp_seq(self):
+        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4" and self._ipv4_protocol == "ICMP":
+            return self._icmp_seq
 
     def get_protocol(self):
         if self._frame_type == "Ethernet II" and self._ether_type == "IPv4":
@@ -35,11 +55,11 @@ class Frame:
         return self._destination_port
 
     def get_src_ip(self):
-        if self._frame_type == "Ethernet II" and (self._ether_type =="IPv4" or self._ether_type == "ARP"):
+        if self._frame_type == "Ethernet II" and (self._ether_type == "IPv4" or self._ether_type == "ARP"):
             return self._source_ip
 
     def get_dst_ip(self):
-        if self._frame_type == "Ethernet II" and (self._ether_type =="IPv4" or self._ether_type == "ARP"):
+        if self._frame_type == "Ethernet II" and (self._ether_type == "IPv4" or self._ether_type == "ARP"):
             return self._destination_ip
 
     def get_app_protocol(self):
@@ -171,17 +191,25 @@ class Frame:
         checker = ""
         icmp_types = {
             "00": "Reply",
-            "08": "Request"
+            "08": "Request",
+            "03": "Destination Unreachable",
+            "05": "Redirect",
+            "09": "Router Advertisement",
+            "10": "Router Selection",
+            "11": "Time Exceeded",
+            "12": "Parameter Problem",
+            "13": "Timestamp",
+            "14": "Timestamp Reply",
         }
-        offset = int(f"{self._byte_code[17]:02x}", 16) - 96
-        for byte in self._byte_code[74+offset:76+offset]:
+        offset = int(f"{self._byte_code[14]:02x}"[1:], 16) * 4 + 14
+        for byte in self._byte_code[4 + offset:6 + offset]:
             checker += f'{byte:02x}'
-        id_seq = str(int(checker, 16))
+        ident = str(int(checker, 16))
         checker = ""
-        for byte in self._byte_code[76+offset:78+offset]:
+        for byte in self._byte_code[6 + offset:8 + offset]:
             checker += f'{byte:02x}'
-        id_seq += "_" + str(int(checker, 16))
-        return {"type": icmp_types.get(f'{self._byte_code[70+offset]:02x}'), "id_seq": id_seq}
+        seq = str(int(checker, 16))
+        return icmp_types.get(str(int(f'{self._byte_code[0 + offset]:02x}', 16)).zfill(2), "unknown"), ident, seq
 
     def check_arp(self):
         checker = ""
@@ -193,7 +221,7 @@ class Frame:
         if self._frame_type == "Ethernet II":
             return self._ether_type
 
-    def get_item(self):
+    def get_item(self, mode=None):
         nested_item = yaml.YAML()
         packet = nested_item.map()
         packet["frame_number"] = self._number
@@ -215,12 +243,20 @@ class Frame:
                 packet["dst_ip"] = self._destination_ip
             if self._ipv4_protocol is not None:
                 packet["protocol"] = self._ipv4_protocol
-            if self._ipv4_protocol == "TCP" or self._ipv4_protocol == "UDP":
-                if self._source_port is not None:
-                    packet["src_port"] = self._source_port
-                if self._destination_port is not None:
-                    packet["dst_port"] = self._destination_port
-                if self._app_protocol is not None:
-                    packet["app_protocol"] = self._app_protocol
+            if self._ether_type == "ARP":
+                packet["arp_opcode"] = self._arp_opcode
+            if self._ether_type == "IPv4":
+                if self._ipv4_protocol == "TCP" or self._ipv4_protocol == "UDP":
+                    if self._source_port is not None:
+                        packet["src_port"] = self._source_port
+                    if self._destination_port is not None:
+                        packet["dst_port"] = self._destination_port
+                    if self._app_protocol is not None:
+                        packet["app_protocol"] = self._app_protocol
+                if self._ipv4_protocol == "ICMP":
+                    packet["icmp_type"] = self._icmp_type
+                    if mode == "ICMP":
+                        packet["icmp_id"] = int(self._icmp_id)
+                        packet["icmp_seq"] = int(self._icmp_seq)
         packet["hexa_frame"] = LiteralScalarString("".join(self._hex_code))
         return packet

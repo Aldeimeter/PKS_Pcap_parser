@@ -1,3 +1,24 @@
 name: PKS2023/24
 pcap_name: trace-27.pcap
 filter_name: HTTP
+partial_comms:
+- number_comm: 1
+  packets:
+  - frame_number: 1402
+    len_frame_pcap: 60
+    len_frame_medium: 64
+    frame_type: Ethernet II
+    src_mac: 84:B8:02:66:72:34
+    dst_mac: D0:50:99:23:06:24
+    ether_type: IPv4
+    src_ip: 81.201.62.99
+    dst_ip: 147.175.145.164
+    protocol: TCP
+    src_port: 58512
+    dst_port: 80
+    app_protocol: HTTP
+    hexa_frame: |
+      D0 50 99 23 06 24 84 B8 02 66 72 34 08 00 45 00
+      00 28 68 75 40 00 F6 06 66 DA 51 C9 3E 63 93 AF
+      91 A4 E4 90 00 50 F2 4A 53 AB 00 00 00 00 50 02
+      39 08 96 83 00 00 00 00 B0 FF 13 33
