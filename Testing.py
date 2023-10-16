@@ -1,5 +1,5 @@
 import unittest
-from Analyzer import print_in_yaml
+from analyzer import print_in_yaml
 from validator import validate
 
 data = {

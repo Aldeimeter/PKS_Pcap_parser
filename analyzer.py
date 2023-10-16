@@ -33,15 +33,17 @@ def print_in_yaml(pcap_path, mode):
                     senders[frame.get_src_ip()] += 1
                 packet_seq.append(frame.get_item())
                 index += 1
-            if mode == "parse":
+            if mode == "PARSER":
                 header['packets'] = packet_seq
                 ipv4_senders_seq = doc.seq()
                 for sender in senders.items():
                     ipv4_senders_seq.append(senders_yaml(sender))
                 header['ipv4_senders'] = ipv4_senders_seq
-                # TODO most of max in yaml - 3 task
                 max_seq = doc.seq()
-                max_seq.append(senders_yaml(max(senders.items(), key=lambda x: x[1])))
+                max_amount = max(senders.items(), key=lambda x: x[1])[1]
+                for sender in senders.items():
+                    if sender[1] == max_amount:
+                        max_seq.append(senders_yaml(sender))
                 header['max_send_packets_by'] = max_seq
             elif mode in ["HTTP", "FTP-CONTROL", "HTTPS", "TELNET", "SSH", "FTP-DATA"]:
                 complete_coms, partial_coms = communication_block(tcp_filter(frame_list, mode), mode)
@@ -51,7 +53,7 @@ def print_in_yaml(pcap_path, mode):
                 complete_coms, partial_coms = communication_block(icmp_filter(frame_list), mode)
             elif mode == "ARP":
                 complete_coms, partial_coms = communication_block(arp_filter(frame_list), mode)
-            if mode != "parse":
+            if mode != "PARSER":
                 header['filter_name'] = mode
                 if complete_coms is not None and len(complete_coms) > 0:
                     header['complete_comms'] = complete_coms
@@ -108,14 +110,14 @@ def communication_item(key, value, mode=None):
     return communication
 
 
-def communication_block(comp_coms, mode):
+def communication_block(coms_dict, mode):
     nested_item = yaml.YAML()
     communication_seq = nested_item.seq()
     part_communication_seq = nested_item.seq()
     check = True
-    for key in comp_coms.keys():
+    for key in coms_dict.keys():
         if key[-1] == "0":
-            communication_seq.append(communication_item(key, comp_coms.get(key), mode))
+            communication_seq.append(communication_item(key, coms_dict.get(key), mode))
         elif key[-1] == "1":
             if mode not in ["ARP", "ICMP", "TFTP"] and check is True:
                 check = False
@@ -124,11 +126,9 @@ def communication_block(comp_coms, mode):
             part_com_map = nested_item.map()
             part_com_map["number_comm"] = int(key[:-2])
             packet_seq = nested_item.seq()
-            for frame in comp_coms.get(key):
+            for frame in coms_dict.get(key):
                 packet_seq.append(frame.get_item())
             part_com_map['packets'] = packet_seq
             part_communication_seq.append(part_com_map)
 
     return communication_seq, part_communication_seq
-
-# TODO if filter doesn't exist - try again.

@@ -11,74 +11,27 @@ class Frame:
         else:
             self._medium_length = self._length + 4
         self._number = number
-        self._destination = self.get_destination_from_byte_code()
-        self._source = self.get_source_from_byte_code()
+        self._destination = self.check_destination()
+        self._source = self.check_source()
         self._frame_type, self._sap, self._pid = self.check_type(first_check)
         if self._frame_type == "Ethernet II":
             self._ether_type, self._ipv4_protocol, self._source_ip, self._destination_ip, \
                 self._source_port, self._destination_port, self._app_protocol = self.ether_type_check(second_check)
             if self._app_protocol in ["HTTP", "FTP-CONTROL", "HTTPS", "TELNET", "SSH", "FTP-DATA"]:
-                self._flags = self.check_flags()
+                self._flags = self.check_tcp_flags()
             elif self._ipv4_protocol == "ICMP":
                 self._icmp_type, self._icmp_id, self._icmp_seq = self.check_icmp()
             elif self._ether_type == "ARP":
-                self._arp_opcode = self.check_arp()
+                self._arp_opcode = self.check_arp_opcode()
         self._hex_code = self.create_hex_code()
 
-    def get_length(self):
-        return self._length
-
-    def get_arp_opcode(self):
-        if self._frame_type == "Ethernet II" and self._ether_type == "ARP":
-            return self._arp_opcode
-
-    def get_icmp_type(self):
-        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4" and self._ipv4_protocol == "ICMP":
-            return self._icmp_type
-
-    def get_icmp_id(self):
-        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4" and self._ipv4_protocol == "ICMP":
-            return self._icmp_id
-
-    def get_icmp_seq(self):
-        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4" and self._ipv4_protocol == "ICMP":
-            return self._icmp_seq
-
-    def get_protocol(self):
-        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4":
-            return self._ipv4_protocol
-
-    def get_src_port(self):
-        return self._source_port
-
-    def get_dst_port(self):
-        return self._destination_port
-
-    def get_src_ip(self):
-        if self._frame_type == "Ethernet II" and (self._ether_type == "IPv4" or self._ether_type == "ARP"):
-            return self._source_ip
-
-    def get_dst_ip(self):
-        if self._frame_type == "Ethernet II" and (self._ether_type == "IPv4" or self._ether_type == "ARP"):
-            return self._destination_ip
-
-    def get_app_protocol(self):
-        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4":
-            return self._app_protocol
-
-    def get_flags(self):
-        return self._flags
-
-    def get_number(self):
-        return self._number
-
-    def get_destination_from_byte_code(self):
+    def check_destination(self):
         destination = ""
         for byte in self._byte_code[0:6]:
             destination += f"{byte:02x}" + ":"
         return destination.upper()[0:len(destination) - 1]
 
-    def get_source_from_byte_code(self):
+    def check_source(self):
         destination = ""
         for byte in self._byte_code[6:12]:
             destination += f"{byte:02x}" + ":"
@@ -157,7 +110,7 @@ class Frame:
                 self._byte_code) else f"{self._byte_code[i]:02x}" + " "
         return hex_code.upper().strip() + "\n"
 
-    def check_flags(self):
+    def check_tcp_flags(self):
         checker = ""
         for byte in self._byte_code[46:48]:
             checker += f'{byte:02x}'
@@ -202,6 +155,9 @@ class Frame:
             "14": "Timestamp Reply",
         }
         offset = int(f"{self._byte_code[14]:02x}"[1:], 16) * 4 + 14
+        icmp_type = icmp_types.get(str(int(f'{self._byte_code[0 + offset]:02x}', 16)).zfill(2), "unknown")
+        if icmp_type == "Time Exceeded":
+            offset += int(f"{self._byte_code[14]:02x}"[1:], 16) * 4 + 8
         for byte in self._byte_code[4 + offset:6 + offset]:
             checker += f'{byte:02x}'
         ident = str(int(checker, 16))
@@ -209,9 +165,9 @@ class Frame:
         for byte in self._byte_code[6 + offset:8 + offset]:
             checker += f'{byte:02x}'
         seq = str(int(checker, 16))
-        return icmp_types.get(str(int(f'{self._byte_code[0 + offset]:02x}', 16)).zfill(2), "unknown"), ident, seq
+        return icmp_type, ident, seq
 
-    def check_arp(self):
+    def check_arp_opcode(self):
         checker = ""
         for byte in self._byte_code[20:22]:
             checker += f'{byte:02x}'
@@ -260,3 +216,50 @@ class Frame:
                         packet["icmp_seq"] = int(self._icmp_seq)
         packet["hexa_frame"] = LiteralScalarString("".join(self._hex_code))
         return packet
+
+    def get_length(self):
+        return self._length
+
+    def get_arp_opcode(self):
+        if self._frame_type == "Ethernet II" and self._ether_type == "ARP":
+            return self._arp_opcode
+
+    def get_icmp_type(self):
+        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4" and self._ipv4_protocol == "ICMP":
+            return self._icmp_type
+
+    def get_icmp_id(self):
+        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4" and self._ipv4_protocol == "ICMP":
+            return self._icmp_id
+
+    def get_icmp_seq(self):
+        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4" and self._ipv4_protocol == "ICMP":
+            return self._icmp_seq
+
+    def get_ipv4_protocol(self):
+        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4":
+            return self._ipv4_protocol
+
+    def get_src_port(self):
+        return self._source_port
+
+    def get_dst_port(self):
+        return self._destination_port
+
+    def get_src_ip(self):
+        if self._frame_type == "Ethernet II" and (self._ether_type == "IPv4" or self._ether_type == "ARP"):
+            return self._source_ip
+
+    def get_dst_ip(self):
+        if self._frame_type == "Ethernet II" and (self._ether_type == "IPv4" or self._ether_type == "ARP"):
+            return self._destination_ip
+
+    def get_app_protocol(self):
+        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4":
+            return self._app_protocol
+
+    def get_flags(self):
+        return self._flags
+
+    def get_number(self):
+        return self._number
