@@ -173,3 +173,35 @@ def arp_filter(frame_list):
     if part_com_requests:
         coms_dict[f'{k:d}_1'] = part_com_requests
     return coms_dict
+
+
+def syn_filter(frame_list):
+    tcp_frame_list = [frame for frame in frame_list if frame.get_ipv4_protocol() == 'TCP']
+    ip_pairs_list = []
+    ip_pair_frames = {}
+    for frame in tcp_frame_list:
+        ip_pair = (str(frame.get_src_ip()) + ":" + str(frame.get_src_port()), str(frame.get_dst_ip()) + ":"
+                   + str(frame.get_dst_port()))
+        if ip_pair not in ip_pairs_list and ip_pair[::-1] not in ip_pairs_list:
+            ip_pairs_list.append(ip_pair)
+
+    for frame in tcp_frame_list:
+        ip_pair = (str(frame.get_src_ip()) + ":" + str(frame.get_src_port()), str(frame.get_dst_ip()) + ":"
+                   + str(frame.get_dst_port()))
+        if ip_pair in ip_pairs_list:
+            if ip_pair_frames.get(ip_pair) is None:
+                ip_pair_frames[ip_pair] = []
+            ip_pair_frames[ip_pair] = ip_pair_frames[ip_pair] + [frame]
+        elif ip_pair[::-1] in ip_pairs_list:
+            if ip_pair_frames.get(ip_pair[::-1]) is None:
+                ip_pair_frames[ip_pair[::-1]] = []
+            ip_pair_frames[ip_pair[::-1]] = ip_pair_frames[ip_pair[::-1]] + [frame]
+    syns = []
+    for frames in ip_pair_frames.values():
+        for frame in frames:
+            flags = frame.get_flags()
+            if flags is not None:
+                if len(flags) == 1 and 'SYN' == flags[0]:
+                    syns.append(frame)
+    return syns
+

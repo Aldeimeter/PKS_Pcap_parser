@@ -53,7 +53,14 @@ def print_in_yaml(pcap_path, mode):
                 complete_coms, partial_coms = communication_block(icmp_filter(frame_list), mode)
             elif mode == "ARP":
                 complete_coms, partial_coms = communication_block(arp_filter(frame_list), mode)
-            if mode != "PARSER":
+            elif mode == "SYN":
+                packet_seq = []
+                frames = syn_filter(frame_list)
+                for frame in frames:
+                    packet_seq.append(frame.get_item())
+                header['packets'] = packet_seq
+                header['amount of SYN'] = len(frames)
+            if mode not in ["PARSER", "SYN"]:
                 header['filter_name'] = mode
                 if complete_coms is not None and len(complete_coms) > 0:
                     header['complete_comms'] = complete_coms

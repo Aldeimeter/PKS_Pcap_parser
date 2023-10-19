@@ -259,7 +259,9 @@ class Frame:
             return self._app_protocol
 
     def get_flags(self):
-        return self._flags
+        if self._frame_type == "Ethernet II" and self._ether_type == "IPv4"\
+                and self._ipv4_protocol == "TCP" and self._app_protocol in ["HTTP", "FTP-CONTROL", "HTTPS", "TELNET", "SSH", "FTP-DATA"]:
+            return self._flags
 
     def get_number(self):
         return self._number

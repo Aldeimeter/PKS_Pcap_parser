@@ -16,8 +16,9 @@ def main():
             FTP-DATA
             TFTP
             ICMP
-            ARP\n""").strip().upper()
-            if user_input in ["HTTP", "HTTPS", "TELNET", "SSH", "FTP-CONTROL", "FTP-DATA", "TFTP", "ICMP", "ARP"]:
+            ARP
+            SYN\n""").strip().upper()
+            if user_input in ["HTTP", "HTTPS", "TELNET", "SSH", "FTP-CONTROL", "FTP-DATA", "TFTP", "ICMP", "ARP","SYN"]:
                 pcap_path = input("Enter the path to the .pcap file: ")
                 print_in_yaml(pcap_path, user_input)
             else:

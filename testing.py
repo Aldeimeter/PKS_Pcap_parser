@@ -95,6 +95,46 @@ data = {
         'trace-6.pcap',
     ]
 }
+finalFileName = "z1-final_v2.pcap"
+
+
+class FinalTest(unittest.TestCase):
+    def test_http(self):
+        result = validate(print_in_yaml(finalFileName, "HTTP"))
+        self.assert_(result, True)
+
+    def test_https(self):
+        result = validate(print_in_yaml(finalFileName, "HTTPS"))
+        self.assert_(result, True)
+
+    def test_telnet(self):
+        result = validate(print_in_yaml(finalFileName, "TELNET"))
+        self.assert_(result, True)
+
+    def test_ssh(self):
+        result = validate(print_in_yaml(finalFileName, "SSH"))
+        self.assert_(result, True)
+
+    def test_FTPControl(self):
+        result = validate(print_in_yaml(finalFileName, "FTP-CONTROL"))
+        self.assert_(result, True)
+
+    def test_FTPData(self):
+        result = validate(print_in_yaml(finalFileName, "FTP-DATA"))
+        self.assert_(result, True)
+
+    def test_TFTP(self):
+        result = validate(print_in_yaml(finalFileName, "TFTP"))
+        self.assert_(result, True)
+
+    def test_ICMP(self):
+        result = validate(print_in_yaml(finalFileName, "ICMP"))
+        self.assert_(result, True)
+
+    def test_ARP(self):
+        result = validate(print_in_yaml(finalFileName, "ARP"))
+        self.assert_(result, True)
+
 
 
 class TestHttp(unittest.TestCase):
